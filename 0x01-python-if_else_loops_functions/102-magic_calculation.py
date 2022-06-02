@@ -6,4 +6,4 @@ def magic_calculation(a, b, c):
         return a + b
     return a * b - c
 # import dis
-#dis.dis(magic_calculation)
+# idis.dis(magic_calculation)
