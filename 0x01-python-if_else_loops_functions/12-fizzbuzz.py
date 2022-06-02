@@ -2,7 +2,7 @@
 def fizzbuzz():
     """
     Prints the number from 1 to 100 separated by whitespace
-    but for multiples of 3 prints 'Fizz' and multiples of 5 
+    but for multiples of 3 prints 'Fizz' and multiples of 5
     prints 'Buzz'
     """
     for i in range(1, 101):
