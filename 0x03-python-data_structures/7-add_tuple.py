@@ -6,4 +6,3 @@ def add_tuple(tuple_a=(), tuple_b=()):
     b = tuple_b[:2] + (0,) * (2 - len(tuple_b))
     c = [x + y for x, y in zip(a, b)]
     return tuple(c[0:2])
-
