@@ -1,4 +1,4 @@
-#include "list.h"
+#include "lists.h"
 
 /**
  * is_palindrome - check id=f a linked list is a palindrome
