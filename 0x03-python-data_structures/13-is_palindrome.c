@@ -1,20 +1,65 @@
 #include "lists.h"
 
+listint_t *reverse_listint(listint_t **head);
+int is_palindrome(listint_t **head);
 /**
- * is_palindrome - check id=f a linked list is a palindrome
+ * reverse_listint - Reverses a singly liinked list.
+ * @head: pointer to first node of the reversed list
+ *
+ * Return: pointer to the head of reversed list
+ */
+listint_t *reverse_listint(listint_t **head)
+{
+	listint_t *node = *head, *next, *prev = NULL;
+
+	while (node)
+	{
+		next = node->next;
+		node->next = prev;
+		prev = node;
+		node = next;
+	}
+	*head = prev;
+	return (*head);
+}
+
+/**
+ * is_palindrome - check if a linked list is a palindrome
  * @head: pointer to head of first list
  * Return: 0 or 1
  */
 int is_palindrome(listint_t **head)
 {
-	const listint_t *current;
-	const listint_t *tail;
-	unsigned int n = 0;
+	listint_t *temp, *rev, *mid;
+	size_t size = 0, i;
 
-	//Get length
-	//Use a func to get a node at a specific index
-	//check the first to last and second to second last ...
-	//return true at the end (if all passed the checks)
-	
-	return (n);
+	if (*head == NULL || (*head)->next == NULL)
+		return (1);
+	temp = *head;
+	while (temp)
+	{
+		size++;
+		temp = temp->next;
+	}
+
+	temp = *head;
+	for (i = 0; i < (size / 2) - 1; i++)
+		temp = temp->next;
+	if ((size % 2) == 0 && temp->n != temp->next->n)
+		return (0);
+	temp = temp->next->next;
+	rev = reverse_listint(&temp);
+	mid = rev;
+
+	temp = *head;
+	while (rev)
+	{
+		if (temp->n != rev->n)
+			return (0);
+		temp = temp->next;
+		rev = rev->next;
+	}
+	reverse_listint(&mid);
+
+	return (1);
 }
