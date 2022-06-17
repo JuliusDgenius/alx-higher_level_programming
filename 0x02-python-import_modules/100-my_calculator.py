@@ -8,7 +8,7 @@ if __name__ == '__main__':
             if sys.argv[2] == func[0]:
                 a = int(sys.argv[1])
                 b = int(sys.argv[3])
-                print('{:d} {:s} {:d}'.format(
+                print('{:d} {:s} {:d} = {:d}'.format(
                     a, func[0], b, func[1](a, b)
                     ))
                 sys.exit()
