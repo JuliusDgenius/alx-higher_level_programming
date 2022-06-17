@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    import hidden_4
-    all_dir = dir(hidden_4)
-    for i in range(0, len(all_dir)):
-        if "__" != all-dir[i][:2]:
-            print(all_dir[i])
+    from importlib import import_module
+    hidden_4 = import_module('hidden_4')
+    for name in sorted(dir(hidden_4)):
+        if name[0:2] != '__':
+            print('{:s}'.format(name))
