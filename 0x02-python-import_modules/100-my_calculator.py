@@ -1,45 +1,19 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
-    from sys import argv
-    from calculator_1 import *
-    count = len(argv)
-
-    if count != 4:
-        print("Usage: {} <a> <operator> <b>".format(argv[0]))
-        exit(1)
-
-    num1 = int(argv[1])
-    num2 = int(argv[3])
-    op = argv[2]
-
-    def not_found():
-        print("Unknown operator. Available operators: +, -, * and /")
-        exit(1)
-
-    def add_():
-        total = add(num1, num2)
-        print("{:d} + {:d} = {:d}".format(num1, num2, total))
-        return total
-
-    def sub_():
-        total = sub(num1, num2)
-        print("{:d} - {:d} = {:d}".format(num1, num2, total))
-        return total
-
-    def mul_():
-        total = mul(num1, num2)
-        print("{:d} * {:d} = {:d}".format(num1, num2, total))
-
-    def div_():
-        total = div(num1, num2)
-        print("{:d} / {:d} = {:d}".format(num1, num2, total))
-        return total
-
-    options = {
-        "+": add_,
-        "-": sub_,
-        "*": mul_,
-        "/": div_
-    }
-    options.get(op, not_found)()
-
+if __name__ == '__main__':
+    import sys
+    from calculator_1 import add, sub, mul, div
+    if len(sys.argv) == 4:
+        funcs = [(('+', add), ('-', sub), ('*', mul), ('/', div)]
+        for func in funcs:
+            if sys.argv[2] == func[0]:
+                a = int(sys.argv[1])
+                b = int(sys.argv[3])
+                print('{:d} {:s} {:d}'.format(
+                    a, func[0], b, func[1](a, b)
+                    ))
+                sys.exit()
+        print('Uknown operator. Available operators: +, -, * and /')
+        sys.exit(1)
+    else:
+        print('Usage: {:s} <a> <operator> <b>'.format(sys.argv[0]))
+        sys.exit(1)
