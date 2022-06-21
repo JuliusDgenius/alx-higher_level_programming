@@ -7,12 +7,12 @@ def safe_print_list(my_list=[], x=0):
     Returns:
         The number of elements printed.
     """
-    value = 0
-    for idx in range(x):
+    ret = 0
+    for i in range(x):
         try:
-            print("{}".format(my_list[idx]), end="")
-            value += 1
-        except Exception as error:
+            print("{}".format(my_list[i]), end="")
+            ret += 1
+        except IndexError:
             break
         print("")
-        return (value)
+        return (ret)
