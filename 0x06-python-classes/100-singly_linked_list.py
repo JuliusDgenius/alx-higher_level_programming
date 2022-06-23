@@ -49,6 +49,7 @@ class SinglyLinkedList:
         """Insert a new Node to the SinglyLinkedList.
         The node is inserted into the list at the correct
         ordered numerical position.
+        
         Args:
             value (Node): The new Node to insert.
         """
@@ -64,8 +65,8 @@ class SinglyLinkedList:
             while (tmp.next_node is not None and
                     tmp.next_node.data < value):
                 tmp = tmp.next_node
-                new.next_node = tmp.next_node
-                tmp.next_node = new
+            new.next_node = tmp.next_node
+            tmp.next_node = new
 
     def __str__(self):
         """Define the print() representation of a SinglyLinkedList."""
@@ -73,5 +74,5 @@ class SinglyLinkedList:
         tmp = self.__head
         while tmp is not None:
             values.append(str(tmp.data))
-            tmp = node.next_node
-        return ('\n'.join(value))
+            tmp = tmp.next_node
+        return ('\n'.join(values))
