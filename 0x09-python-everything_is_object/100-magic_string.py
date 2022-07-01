@@ -2,4 +2,3 @@
 def magic_string(i=[]):
     i += ["BestSchool"]
     return ", ".join(i)
-    
