@@ -8,5 +8,4 @@ class LockedClass:
     except the attribute is 'first_name'
     """
 
-
     __slots__ = ["first_name"]
