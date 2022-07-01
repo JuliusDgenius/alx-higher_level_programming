@@ -28,7 +28,7 @@ def matrix_divided(matrix, div):
     for line in matrix_divided:
         if len(line) != len(matrix_divided[0]):
             raise TypeError('Each row of the matrix must be the same size')
-            
+
         for element_index, element in enumerate(line):
             if not isinstance(element, (int, float)):
                 raise TypeError(
