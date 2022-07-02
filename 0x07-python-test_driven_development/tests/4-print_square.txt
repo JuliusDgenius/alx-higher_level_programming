@@ -1,11 +1,11 @@
-The ``Print Square`` module
+The 'Print Square' module
 ===========================
 
-Using ``print_square``
+Using 'print_square'
 ----------------------
 
 This is a text file in reStructuredText format.
-First import ``print_square`` from the ``Print Square`` module:
+First import 'print_square' from the 'Print Square' module:
 
     >>> print_square = __import__("4-print_square").print_square
 
