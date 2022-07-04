@@ -7,7 +7,7 @@ This module implements a Rectangle object
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
-clas Rectangle(BaseGeometry):
+class Rectangle(BaseGeometry):
     def __init__(self, width, height):
         """Initialization
 
