@@ -3,7 +3,7 @@
 import json
 
 
-def to_json_sting(my_obj):
+def to_json_string(my_obj):
     """Return the JSON representation of a string object"""
     jsonRep = json.dumps(my_obj)
     return (jsonRep)
