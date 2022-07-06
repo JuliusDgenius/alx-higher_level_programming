@@ -16,7 +16,7 @@ if __name__ == "__main__":
 
     try:
         for line in stdin:
-            if c== 10:
+            if c == 10:
                 print("File size: {}".format(size))
                 for i in sorted(st):
                     print("{}: {}".format(i, st[i]))
