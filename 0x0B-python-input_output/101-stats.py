@@ -42,7 +42,7 @@ if __name__ == "__main__":
 
         print("File size: {}".format(size))
         for i in sorted(st):
-            print("{}: {}".format(i, st[1]))
+            print("{}: {}".format(i, st[i]))
 
     except KeyboardInterrupt:
         print("File size: {}".format(size))
