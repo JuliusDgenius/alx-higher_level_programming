@@ -10,7 +10,7 @@ def pascal_triangle(n):
     if n <= 0:
         return []
 
-    triangle = [[i]]
+    triangle = [[1]]
 
     for x in range(1, n):
         row = [1]
