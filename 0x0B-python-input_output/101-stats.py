@@ -34,7 +34,7 @@ if __name__ == "__main__":
             try:
                 if line[-2] in vd:
                     if st.get(line[-2], -1) == -1:
-                        str[line[-2]] = 1
+                        st[line[-2]] = 1
                     else:
                         st[line[-2]] = st[line[-2]] + 1
             except IndexError:
