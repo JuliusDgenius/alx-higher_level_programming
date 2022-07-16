@@ -138,7 +138,7 @@ class Base:
                     keynames = ["id", "size", "x", "y"]
                 list_dicts = csv.DictReader(csvfile, fieldnames=keynames)
                 list_dicts = [dict([k, int(v)] for k, v in d.item()) for
-                        d in list_dicts]
+                                id in list_dicts]
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
@@ -268,6 +268,4 @@ class Base:
             turtle.left(90)
             turtle.forward(square.y)
             turtle.right(90)
-        turtle.getscreen()._root.mainloop()
-
-    
+        turtle.getscreen()._root.mainloop()    

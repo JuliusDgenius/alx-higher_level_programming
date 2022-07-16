@@ -10,7 +10,7 @@ Unittest classes:
         TestBase_save_to_file_csv - line 406
         TestBase_load_from_file_cdv - line 484
 """
-import as
+import os
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
