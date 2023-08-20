@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-def complex_delete(my_dict, value):
-    tmp = my_dict.copy
-    for j, k in tmp.items():
-        if value == k:
-            my_dict.pop(k)
-    return my_dict
+def complex_delete(a_dictionary, value):
+    tmp = a_dictionary.copy()
+    for k, l in tmp.items():
+        if value == l:
+            a_dictionary.pop(k)
+    return a_dictionary
