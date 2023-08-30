@@ -50,7 +50,6 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
-
     def area(self):
         """computes the area of a square"""
         return (self.__size * self.__size)
