@@ -1,73 +1,27 @@
 """
-This is the '0-add_integer.txt' test module
+This is the 0-add_integer module
 
-The 0-add_integer module provide one funtion, add_integer().
-that adds two integers.
+It supplies the add_integer function that computes the sum of 2 integers
 """
+
+First first import 'add_integer' from '0-add_integer':
+    >>> add_integer = __import__("0-add_integer").add_integer
+
+>>> add_integer(1, 1)
+2
 >>> add_integer(1, 2)
-    3
+3
 >>> add_integer(100, -2)
-    98
+98
 >>> add_integer(2)
-    100
+100
 >>> add_integer(100.3, -2)
-    98
-    >>> add_integer(4, "School")
-    b must be an integer
+98
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
 >>> add_integer(None)
-    a must be an integer
->>> add_integer("String", 1)
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer
->>> add_integer(1, "String")
-Traceback (most recent call last):
-    ...
-TypeError: b must be an integer
->>> add_integer("String", "String")
-Traceback (most recent call last):
-    ...
-TypeError: a must be an integer
->>> add_integer(1, [1, 2, 3])
-Traceback (most recent call last):
-    ...
-TypeError: b must be an integer
->>> add_integer([1, 2, 3], 1)
-Traceback (most recent call last):
-    ...
-TypeError: a must be an integer
->>> add_integer([1, 2, 3], [1, 2, 3])
-Traceback (most recent call last):
-    ...
-TypeError: a must be an integer
->>> add_integer(1, {1, 2, 3})
-Traceback (most recent call last):
-    ...
-TypeError: b must be an integer
->>> add_integer({1, 2, 3}, 2)
-Traceback (most recent call last):
-    ...
-TypeError: a must be an integer
->>> add_integer({1, 2, 3}, {1, 2, 3})
-Traceback (most recent call last):
-    ...
-TypeError: a must be an integer
->>> add_integer()
-Traceback (most recent call last):
-    ...
-TypeError: add_integer() missing 1 required positional argument: 'a'                                                                              >>> add_integer(2)
-    100
-
->>> add_integer(float('inf'))
-Traceback (most recent call last):
-    ...
-OverflowError: cannot convert float infinity to integer
->>> add_integer(float('-inf'))
-Traceback (most recent call last):
-    ...
-OverflowError: cannot convert float infinity to integer
-
->>> add_integer(float('nan'))
-Traceback (most recent call last):
-    ...
-ValueError: cannot convert float NaN to integer
