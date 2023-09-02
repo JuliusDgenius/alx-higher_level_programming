@@ -1,0 +1,25 @@
+This module contains test cases for the 'text_indentation' function.
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("Hello.")
+Hello.
+<BLANKLINE>
+>>> text_indentation("Hello:    world.")
+Hello:
+<BLANKLINE>
+world.
+<BLANKLINE>
+>>> text_indentation(123)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+>>> text_indentation("")
+>>> text_indentation('abc.       def')
+abc.
+<BLANKLINE>
+def
+>>> text_indentation(' abc  .       def' )
+abc.
+<BLANKLINE>
+def
