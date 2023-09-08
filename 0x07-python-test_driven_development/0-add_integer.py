@@ -18,6 +18,6 @@ def add_integer(a, b=98):
     """
     if isinstance(a, str) or a is None:
         raise TypeError("a must be an integer")
-    if isinstance(b, str) or b is None:
+    if isinstance(b, str):
         raise TypeError("b must be an integer")
     return (int(a) + int(b))
