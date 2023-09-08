@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This is '4-print_square' module
-The module supplies the function, 'print_square(size)' 
+The module supplies the function, 'print_square(size)'
 which prints a square of a given size with the character
 """
 
