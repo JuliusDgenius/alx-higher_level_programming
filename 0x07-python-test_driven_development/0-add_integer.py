@@ -16,8 +16,12 @@ def add_integer(a, b=98):
     Raises:
         int: sum of a and b
     """
-    if isinstance(a, str) or a is None:
-        raise TypeError("a must be an integer")
-    if isinstance(b, str):
-        raise TypeError("b must be an integer")
-    return (int(a) + int(b))
+    values = []
+    for x, parameter in [(a, "a"), (b, "b")]:
+        if isinstance(x, int):
+            values.append(x)
+        elif isinstance(x, float):
+            values.append(int(x))
+        else:
+            raise TypeError("{} must be an integer".format(parameter))
+    return sum(values)
