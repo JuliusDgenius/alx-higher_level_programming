@@ -3,7 +3,6 @@
 This module defines `add_integer function that computes
 the sum of two integers
 """
-import doctest
 
 
 def add_integer(a, b=98):
