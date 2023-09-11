@@ -9,4 +9,5 @@ def lookup(obj):
     Args:
         obj (list): The object which list to return.
     """
-    print(obj.__dict__)
+    list_of_attr = dir(obj)
+    return list_of_attr
