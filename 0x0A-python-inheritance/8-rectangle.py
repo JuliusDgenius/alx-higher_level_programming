@@ -4,14 +4,19 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    """Defines the rectangle class that inherits from BaseGeometry"""
-    def __int__(self, width, height):
+    """Defines Rectangle class to inherit from BaseGeometry class"""
+    def __init__(self, width, height):
         """Initializes class instance
         Args:
-            width (int): the width of the rectangle
-            height (int): the height of the rectangle
+            width (int): The rectangle width
+            height (int): The rectangle height
         """
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
+        super().__init__()
         self.__width = width
         self.__height = height
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
+
+        def area(self):
+            """Area of Rectangle instance"""
+            raise Exception("area() is not implemented")
