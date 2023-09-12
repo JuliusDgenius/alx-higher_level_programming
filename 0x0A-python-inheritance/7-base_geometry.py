@@ -7,6 +7,7 @@ class BaseGeometry:
     def __init__(self):
         """initialize instance"""
         pass
+
     def area(self):
         """Area method that does nothing but raise an exception"""
         raise Exception("area() is not implemented")
