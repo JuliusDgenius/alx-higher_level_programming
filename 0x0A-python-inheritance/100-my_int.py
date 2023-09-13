@@ -4,7 +4,7 @@
 
 class MyInt(int):
     """Defines class that inherits from int parent class"""
-    
+
     def __eq__(self, val):
         """Inverts the behaviour of == with !="""
         return self.real != val
