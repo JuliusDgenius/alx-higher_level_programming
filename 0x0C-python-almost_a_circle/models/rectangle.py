@@ -4,75 +4,75 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """Defines the Rectangle class that inherits from Base class"""
+    """Defines the Rectangle class that inherits from Base"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initializes the class instance
+        """Initializes class instance
         Args:
-            width (int): width of the rectangle instance.
-            height (int): height of the rectangle instance.
-            x (int): x plane
-            y (int): y plane
-            id (int): object id
+            width (int): width
+            height (int): height
+            x (int): x-coordinate
+            y (int): y-coordinate
+            id (int): ID of class instance
         """
-        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        super().__init__(id)
 
     @property
-    def get_width(self):
-        """width getter"""
+    def width(self):
+        """Gets width"""
         return self.__width
 
-    @property
-    def get_height(self):
-        """height getter"""
-        return self.__height
-
-    @property
-    def get_x(self):
-        """x getter"""
-        return self.__x
-
-    @property
-    def get_y(self):
-        """x getter"""
-        return self.__y
-
     @width.setter
-    def set_width(self, value):
-        """sets width"""
+    def width(self, value):
+        """Sets width value"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         elif value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
 
+    @property
+    def height(self):
+        """Gets height"""
+        return self.__height
+
     @height.setter
-    def set_height(self, value):
-        """height setter"""
+    def height(self, value):
+        """Sets height"""
         if type(value) is not int:
-            TypeError("height must be an integer")
+            raise TypeError("height must be an integer")
         elif value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
 
+    @property
+    def x(self):
+        """Gets x-coordinate"""
+        return self.__x
+
     @x.setter
-    def set_x(self, value):
-        """Sets x"""
-        if type(x) is not int:
+    def x(self, value):
+        """sets x-coordinate"""
+        if type(value) is not int:
             raise TypeError("x must be an integer")
-        elif x < 0:
+        elif value < 0:
             raise ValueError("x must be >= 0")
-        self.__x = value
+        self.__height = value
+
+    @property
+    def y(self):
+        """Gets y-coordinate"""
+        return self.__y
 
     @y.setter
-    def set_y(self, value):
-        """Sets x"""
+    def y(self, value):
+        """Sets y-coordinate"""
         if type(value) is not int:
             raise TypeError("y must be an integer")
-        elif y < 0:
+        elif value < 0:
             raise ValueError("y must be >= 0")
-        self.__x = value
+        self.__y = value
