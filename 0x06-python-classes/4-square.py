@@ -7,7 +7,7 @@ class Square:
     def __init__(self, size=0):
         """Initializes a square object"""
         self.size = size
-    
+
     @property
     def size(self):
         """Gets private attribute
@@ -19,7 +19,7 @@ class Square:
     @size.setter
     def size(self, value):
         """sets value
-        Args: 
+        Args:
             value (int): the value to set
         """
         if type(value) is not int:
