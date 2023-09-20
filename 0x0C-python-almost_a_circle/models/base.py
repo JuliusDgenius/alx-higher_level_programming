@@ -89,3 +89,14 @@ class Base:
                 self.x = a
             elif i == 3:
                 return []
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances."""
+        filename = str(cls.__name__) + ".json"
+        try:
+            with open(filename, 'r') as json_file:
+                list_dicts = Base.from_json_string(json_file.read())
+                return [cls.create(**d) for d in list_dicts]
+        except IOError:
+            return []
