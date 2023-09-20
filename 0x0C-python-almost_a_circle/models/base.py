@@ -65,11 +65,12 @@ class Base:
         Args:
             dictionary (dict): A double pointer to a dictionary
         """
-        if (dictionary):
-            if cls.__name__ == 'Rectangle':
-                new_rect = cls(1, 1)
-            else:
-                new_rect = cls(1)
+        if cls.__name__ == 'Rectangle':
+            new_rect = cls(1, 1)
+        else:
+            new_rect = cls(1)
+
+        if dictionary:
             new_rect.update(**dictionary)
         return new_rect
 
