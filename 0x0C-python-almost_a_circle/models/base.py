@@ -22,7 +22,7 @@ class Base:
         """static method that return the JSON string representation of
             list_dictionaries
         Args:
-            list_dictionaries (list): A list dictionary
+            list_dictionaries (list): A list of dictionary
         """
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
