@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Module that defines the class Base"""
 import json
+import csv
+import turtle
 
 
 class Base:
@@ -100,3 +102,40 @@ class Base:
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Write the CSV encoding of a list object to a file.
+        Args:
+            list_objs (list): A list of inherited Base instance
+        """
+        filename = cls.__name__ + ".csv"
+        with open(filename, 'w', newline='') as csv_file:
+            if list_objs is None or list_objs == []:
+                csv_file.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    key_names = ["id", "width", "height", "x", "y"]
+                else:
+                    key_names = ["id", "size", "x", "y"]
+                writer = csv.DictWriter(csv_file, field_names=key_names)
+                for obj in list_objs:
+                    writer.writerow(obj.to_dictionary())
+
+     @classmethod
+     def load_from_file_csv(cls):
+         """Returns a list of classes initialized from CSV file.
+         """
+         filename = cls.__name__ + '.csv'
+         try:
+             with open(filename, 'r', newline='') as csv_file:
+                 if cls.__name__ == "Rectangle":
+                     key_names = ["id", "width", "height", "x", "y"]
+                 else:
+                     key_names = ["id", "size", "x", "y"]
+                 list_dicts = csv.DictReader(csv_file, fieldnames=key_names)
+                 list_dicts = [dict([k, int(v)] for k, v in
+                               d.item()) for d in list_dicts]
+                 return [cls.create(**d) for d in list_dicts]
+         except IOError:
+             return []
