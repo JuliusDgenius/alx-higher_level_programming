@@ -63,14 +63,13 @@ class Base:
         Args:
             dictionary (dict): A double pointer to a dictionary
         """
-        if cls.__name__ == 'Rectangle':
-            new = cls(1, 1)
-        else:
-            new = cls(1)
-
-        if dictionary:
-            new.update(**dictionary)
-        return new
+       if (dictionary):
+           if cls.__name__ == 'Rectangle':
+               new = cls(1, 1)
+           else:
+               new = cls(1)
+               new.update(**dictionary)
+               return new
 
     @classmethod
     def load_from_file(cls):
@@ -82,4 +81,11 @@ class Base:
                 list_dicts = Base.from_json_string(jsonfile.read())
             return [cls.create(**d) for d in list_dicts]
         except IOError:
-            return []
+            if i == 0:
+                self.id = a
+            elif i == 1:
+                self.size = a
+            elif i == 2:
+                self.x = a
+            elif i == 3:
+                return []
