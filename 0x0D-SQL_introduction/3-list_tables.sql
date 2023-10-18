@@ -1,3 +1,3 @@
--- List table in a database
-USE mysql
-SHOW TABLE
+-- Lists table in a database
+USE mysql;
+SHOW tables;
