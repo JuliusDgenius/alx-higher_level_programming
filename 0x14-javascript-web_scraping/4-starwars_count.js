@@ -22,7 +22,7 @@ request(url, (err, response, body) => {
       }
     });
 
-    console.log(wedgeMoviesCount);
+    console.log(`${wedgeMoviesCount}\n`);
   } else {
     console.log(`code: ${response.statusCode}`);
   }
