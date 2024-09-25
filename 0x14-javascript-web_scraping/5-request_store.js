@@ -33,18 +33,18 @@ request(url, filePath, (err, response, body) => {
 	});
 
 	// Extract h1 if p tags are unavailable
-	if (!extractedText) {
-		extractedText = 'No <h1> elements found.\n';
-		$('h1').each((index, element) => {
-			extractedText += $(element).text() + '\n';
-		});
-	}
+	// if (!extractedText) {
+	// 	extractedText = 'No <h1> elements found.\n';
+	// 	$('h1').each((index, element) => {
+	// 		extractedText += $(element).text() + '\n';
+	// 	});
+	// }
 
 	fs.writeFile(filePath, body, 'utf8', (err) => {
 		if (err) {
 			console.log(`Error: ${err} occurred while writing file.`);
 			process.exit(1);
 		}
-		 console.log(`The content of ${url}${filePath} has been successfully written to ${filePath}.`);
+		 // console.log(`The content of ${url}${filePath} has been successfully written to ${filePath}.`);
 	});
 });
