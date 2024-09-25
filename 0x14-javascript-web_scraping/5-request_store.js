@@ -24,22 +24,6 @@ request(url, filePath, (err, response, body) => {
 		process.exit(1);
 	}
 
-	// Load the response to cheerio
-	const $ = cheerio.load(body);
-	// Extract text from <p> elements
-	let extractedText = '';
-	$('p').each((index, element) => {
-		extractedText += $(element).text() + '\n';
-	});
-
-	// Extract h1 if p tags are unavailable
-	if (!extractedText) {
-		extractedText = 'No <h1> elements found.\n';
-		$('h1').each((index, element) => {
-			extractedText += $(element).text() + '\n';
-		});
-	}
-
 	fs.writeFile(filePath, body, 'utf8', (err) => {
 		if (err) {
 			console.log(`Error: ${err} occurred while writing file.`);
