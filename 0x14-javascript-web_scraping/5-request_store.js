@@ -7,28 +7,25 @@
 
 const request = require('request');
 const fs = require('fs');
-const cheerio = require('cheerio');
 
 const url = process.argv[2];
 const filePath = process.argv[3];
 
-
 if (!url || !filePath) {
-	console.log("Usage: ./5-request_store.js <url> <filePath>");
-	process.exit(1);
+  console.log('Usage: ./5-request_store.js <url> <filePath>');
+  process.exit(1);
 }
 
 request(url, filePath, (err, response, body) => {
-	if (err) {
-		console.log(`${err} occurred.`);
-		process.exit(1);
-	}
+  if (err) {
+    console.log(`${err} occurred.`);
+    process.exit(1);
+  }
 
-	fs.writeFile(filePath, body, 'utf8', (err) => {
-		if (err) {
-			console.log(`Error: ${err} occurred while writing file.`);
-			process.exit(1);
-		}
-		 // console.log(`The content of ${url}${filePath} has been successfully written to ${filePath}.`);
-	});
+  fs.writeFile(filePath, body, 'utf8', (err) => {
+    if (err) {
+      console.log(`Error: ${err} occurred while writing file.`);
+      process.exit(1);
+    }
+  });
 });
