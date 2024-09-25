@@ -24,6 +24,6 @@ request(url, (err, response, body) => {
 
     console.log(wedgeMoviesCount);
   } else {
-    console.log(`code: ${response.statusCode}`);
+    // console.log(`code: ${response.statusCode}`);
   }
 });

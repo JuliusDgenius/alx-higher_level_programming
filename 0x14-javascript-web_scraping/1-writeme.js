@@ -16,5 +16,5 @@ fs.writeFile(filePath, content, 'utf8', (err) => {
     console.log(`Error writing to: ${err.message}`);
     process.exit(1);
   }
-  console.log(`Successfully written to ${filePath}`);
+  // console.log(`Successfully written to ${filePath}`);
 });
