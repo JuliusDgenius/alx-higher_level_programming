@@ -15,17 +15,19 @@ request(url, (err, response, body) => {
   }
 
   const data = JSON.parse(body);
+  console.log(data);
   const completedTask = {};
 
   for (const task of data) {
     if (task.completed) {
       if (!completedTask[task.userId]) {
         completedTask[task.userId] = 0;
+        console.log(completedTask);
       }
       completedTask[task.userId]++;
+      console.log(completedTask);
     }
   }
-
   for (const x in completedTask) {
     console.log(`${x}: ${completedTask[x]}`);
   }
